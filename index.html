@@ -154,8 +154,20 @@
                         bidder: 'audienceNetwork',
                         params: {
                              placementId: '616851695460361_624077668071097',
+	    		     testmode: true
                         }
                  }]
+	   },{
+		 code: 'div-gpt-ad-1560300915217-0',     
+                 sizes: [[300, 250]],
+		 bids: [{
+			bidder: 'audienceNetwork',
+			params: {
+			      placementId: '616851695460361_624077744737756',
+			      testmode: true,
+			      format: 'native'
+			}
+		 }]
            }];
 
             // ======== DO NOT EDIT BELOW THIS LINE =========== //
@@ -211,6 +223,9 @@
 				    div_1_sizes, 
 				    'div-gpt-ad-1559167585393-0')
 			.addService(googletag.pubads());
+		googletag
+			.defineSlot('/64720321/prebid-adunit-native', ['fluid'], 'div-gpt-ad-1560300915217-0')
+			.addService(googletag.pubads());
 		    
 		googletag.pubads().disableInitialLoad();
        	        googletag.pubads().enableSingleRequest();
@@ -229,7 +244,6 @@
             Make Something Awesome
         </h2>
         <h4 style="color:#D63A18">Direct Sold - 300x250</h4>
-
         <!-- /64720321/direct-sold-test-300-250 -->
         <div id='div-gpt-ad-1559167585393-0' style='height:250px; width:300px;'>
             <script>
@@ -260,6 +274,26 @@
 		        console.log("Hello world!3");
                    });
              </script>
+        </div>
+	    
+	<h4 style="color:#D63A18;margin-top: 20px;">Header Bidding - Native</h4>
+	<!-- /64720321/prebid-adunit-native -->
+	<div id='div-gpt-ad-1560300915217-0'>
+	     <script>
+		    googletag.cmd.push(function() { 
+				googletag.display('div-gpt-ad-1560300915217-0'); 
+		    });
+	     </script>
+	     <div class="thirdPartyRoot">
+		  <a class="fbAdLink">
+		    <div class="fbAdMedia thirdPartyMediaClass"></div>
+		    <div class="fbAdSubtitle thirdPartySubtitleClass"></div>
+		    <div class="fbDefaultNativeAdWrapper">
+		      <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+		      <div class="fbAdTitle thirdPartyTitleClass"></div>
+		    </div>
+		  </a>
+	      </div>  
         </div>
     </div>        
 
