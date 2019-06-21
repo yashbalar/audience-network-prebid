@@ -236,7 +236,12 @@
 			.addService(googletag.pubads());
 		    
 		googletag.pubads().disableInitialLoad();
-
+		googletag.pubads().enableLazyLoad({
+			fetchMarginPercent: 500,
+			renderMarginPercent: 200,
+			mobileScaling: 2.0
+		});
+		googletag.pubads().collapseEmptyDivs(true);
                 googletag.enableServices();
              });
 
