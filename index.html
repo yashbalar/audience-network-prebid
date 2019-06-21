@@ -147,8 +147,9 @@
             var PREBID_TIMEOUT = 15000;
             var FAILSAFE_TIMEOUT = 17000;
 
+	   // Defines a list of all adunits
            var adUnits = [{
-                 code: 'div-gpt-ad-1559248285557-0',
+                 code: 'div-gpt-ad-1559248285557-0', // adSlot's html <div> code
                  sizes: [[300, 250], [300, 600]],
                  bids: [{
                         bidder: 'audienceNetwork',
@@ -157,7 +158,7 @@
                         }
                  }]
 	   },{
-		 code: 'div-gpt-ad-1560300915217-0',     
+		 code: 'div-gpt-ad-1560300915217-0', // adSlot's html <div> code    
                  sizes: [[300, 250]],
 		 bids: [{
 			bidder: 'audienceNetwork',
@@ -168,54 +169,46 @@
 		 }]
            }];
 
-            // ======== DO NOT EDIT BELOW THIS LINE =========== //
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
 
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
 	   
+ 	    // This is the callback that will be called by PBJS after auction	   
             function initAdserver() {
                 if (pbjs.initAdserverSet) return;
 		    
                 googletag.cmd.push(function() {
                     pbjs.que.push(function() {
-                        pbjs.setTargetingForGPTAsync();
-                        googletag.pubads().refresh();
+                        pbjs.setTargetingForGPTAsync(); // Sets targeting key-value pairs for DFP
+                        googletag.pubads().refresh(); // Calls DFP Ad Server
                     });
                 });
 		    
-                pbjs.initAdserverSet = true;
+                pbjs.initAdserverSet = true; // Informs PBJS that DFP Ad server was called
             }
 	   
 	    pbjs.que.push(function() {
 		    
-                pbjs.addAdUnits(adUnits);
-		pbjs.setConfig({
-  			debugging: {
-    				enabled: true,
-		    		bids: [{	
-      					bidder: 'audienceNetwork',
-      					adUnitCode: '/64720321/prebid-adunit-300-250',
-      					cpm: 1.5
-		    		}]
-  			}
-		});
-                pbjs.requestBids({
-                    bidsBackHandler: initAdserver,
-                    timeout: PREBID_TIMEOUT
+                pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
+		
+                pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
+                    bidsBackHandler: initAdserver, // Callback method
+                    timeout: PREBID_TIMEOUT // Timeout for bidders
                 });
             });
 	   
             // in case PBJS doesn't load
             setTimeout(initAdserver, FAILSAFE_TIMEOUT);
 
+	    // This code defines an adSlot by connecting DFP adunit code with size and html <div>     
             googletag.cmd.push(function() {
                 googletag
 			.defineSlot(
-				    '/64720321/prebid-adunit-300-250', 
-				    div_1_sizes, 
-				    'div-gpt-ad-1559248285557-0')
+				    '/64720321/prebid-adunit-300-250', // adunit code
+				    div_1_sizes, 		       // size
+				    'div-gpt-ad-1559248285557-0')      // html <div>
 			.addService(googletag.pubads());
 		
                 googletag
@@ -235,7 +228,7 @@
 			.defineSlot('/64720321/prebid-adunit-native', [[1,1],['fluid']], 'div-gpt-ad-1560300915217-0')
 			.addService(googletag.pubads());
 		    
-		googletag.pubads().disableInitialLoad();
+		googletag.pubads().disableInitialLoad(); // this will block GPT from loading initially, giving PBJS time to run header bidding auction
 		googletag.pubads().enableLazyLoad({
 			fetchMarginPercent: 500,
 			renderMarginPercent: 200,
@@ -258,34 +251,38 @@
         </h2>
         <h4 style="color:#D63A18">Direct Sold - 300x250</h4>
         <!-- /64720321/direct-sold-test-300-250 -->
+	<!-- This script is part of GPT tag that loads the image creative into the AdSlot -->
         <div id='div-gpt-ad-1559167585393-0' style='height:250px; width:300px;'>
             <script>
                  googletag.cmd.push(function() {
                      googletag.display('div-gpt-ad-1559167585393-0');
-		     console.log("Hello world!1");
+		     console.log("DFP AdUnit: direct-sold-test-300-250 loaded");
                  });
              </script>
         </div>
 
         <h4 style="color:#D63A18;margin-top: 20px;">Direct Sold - 300x600</h4>
         <!-- /64720321/direct-sold-test-300-600 -->
+	<!-- This script is part of GPT tag that loads the image creative into the AdSlot -->
         <div id='div-gpt-ad-1559224461151-0' style='height:600px; width:300px;'>
             <script>
                  googletag.cmd.push(function() {
                      googletag.display('div-gpt-ad-1559224461151-0');
-		     console.log("Hello world!2");
+		     console.log("DFP AdUnit: direct-sold-test-300-600 loaded");
                  });
              </script>
         </div>
 
 	<h4 style="color:#D63A18;margin-top: 20px;">Header Bidding - Native</h4>
 	<!-- /64720321/prebid-adunit-native -->
+	<!-- This script is part of GPT tag that loads the creative into the AdSlot -->    
 	<div id='div-gpt-ad-1560300915217-0'>
 	     <script>
 		    googletag.cmd.push(function() { 
 				googletag.display('div-gpt-ad-1560300915217-0'); 
 		    });
 	     </script>
+	     <!-- This html code is used to display native ad after GPT tag loads the 3rd party creative script and prebid renders audience network tag --> 
 	     <div class="fbANRoot fbDisplayType fbAdLoaded fbVisibleOnce">
 		  <a class="fbAdLink">
 		    <div class="fbAdMedia thirdPartyMediaClass"></div>
@@ -301,11 +298,12 @@
 	     
         <h4 style="color:#D63A18;margin-top: 20px;">Header Bidding - 300x250</h4>
         <!-- /64720321/prebid-adunit-300-250 -->
+	<!-- This script is part of GPT tag that loads the 3rd party creative into the AdSlot -->    
         <div id='div-gpt-ad-1559248285557-0'>
              <script>
                    googletag.cmd.push(function() { 
                         googletag.display('div-gpt-ad-1559248285557-0'); 
-		        console.log("Hello world!3");
+		        console.log("DFP AdUnit: prebid-adunit-300-250 loaded");
                    });
              </script>
         </div>
