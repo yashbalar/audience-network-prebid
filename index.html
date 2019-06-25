@@ -173,25 +173,18 @@
 			  placementId: '1234567'
 		       }
 		 }, {
-		  bidder: 'criteo',
-		  params: {
-		    zoneId: "1234567"
-		  }
+			  bidder: 'criteo',
+			  params: {
+			    zoneId: "1234567"
+			  }
 		}, {
-		  bidder: 'smartadserver',
-		  params: {
-		    domain: "//prg.smartadserver.com",
-		    siteId: "123456",
-		    pageId: "1234567",
-		    formatId: "12345"
-		  }
-		}, {
-		  bidder: 'aol',
-		  params: {
-		    network: "12345.1",
-		    placement: "1234567"
-		  }
-		}, {
+		      bidder: 'indexExchange',
+		      params: {
+		       id: '1',
+		       siteID: 567894,
+		       timeout: 10000
+		     }
+		 }, {
 		      bidder: 'rubicon',
 		      params: {
 		       accountId: "98765",
@@ -246,19 +239,13 @@
 			     },
 			      alwaysUseBid: true,
 			},
-		    smartadserver: {
-			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
-			       return bidCpm + 1.50;
-			     },
-			      alwaysUseBid: true,
-			},
 		    rubicon: {
 			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
 			       return bidCpm + 0.50;
 			     },
 			      alwaysUseBid: true,
 			},
-		    aol: {
+		    indexExchange: {
 			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
 			       return bidCpm + 0.50;
 			     },
