@@ -170,29 +170,28 @@
                  }, {
 			bidder: 'appnexus',
 			params: {
-			  placementId: '5626309'
+			  placementId: '1234567'
 		       }
 		 }, {
-			bidder: 'sovrn',
-			params: {
-			 tagid: '315045' // <String> tag Id
-		       }
-		      }, {
-			bidder: 'pulsepoint',
-			params: {
-			 cf: '300X250',
-			 cp: 521732,
-			 ct: 76835
-		       }
-		 },  {
-			bidder: 'adform',
-			// available params: [ 'mid', 'inv', 'pdom', 'mname', 'mkw', 'mkv', 'cat', 'bcat', 'bcatrt', 'adv', 'advt', 'cntr', 'cntrt', 'maxp', 'minp', 'sminp', 'w', 'h', 'pb', 'pos', 'cturl', 'iturl', 'cttype', 'hidedomain', 'cdims', 'test' ]
-			params: {
-			 adxDomain: 'adx.adform.net', //optional
-			 mid: 158989,
-			 test: 1
-		       }
-		 }, {
+		  bidder: 'criteo',
+		  params: {
+		    zoneId: "1234567"
+		  }
+		}, {
+		  bidder: 'smartadserver',
+		  params: {
+		    domain: "//prg.smartadserver.com",
+		    siteId: "123456",
+		    pageId: "1234567",
+		    formatId: "12345"
+		  }
+		}, {
+		  bidder: 'aol',
+		  params: {
+		    network: "12345.1",
+		    placement: "1234567"
+		  }
+		}, {
 		      bidder: 'rubicon',
 		      params: {
 		       accountId: "98765",
@@ -241,24 +240,30 @@
 			     },
 			      alwaysUseBid: true,
 			},
-		    sovrn: {
+		    criteo: {
 			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
 			       return bidCpm + 1.00;
 			     },
 			      alwaysUseBid: true,
 			},
-		    pulsepoint: {
+		    smartadserver: {
 			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
 			       return bidCpm + 1.50;
 			     },
 			      alwaysUseBid: true,
 			},
-		    adform: {
+		    rubicon: {
 			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
 			       return bidCpm + 0.50;
 			     },
 			      alwaysUseBid: true,
 			},
+		    aol: {
+			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
+			       return bidCpm + 0.50;
+			     },
+			      alwaysUseBid: true,
+			}
                     standard: {
                         adserverTargeting: [
                             {
