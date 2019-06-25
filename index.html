@@ -132,7 +132,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css" />
 
-   <script async type="application/javascript" src="https://doc-14-94-docs.googleusercontent.com/docs/securesc/sepnani93lghbt2ollih650h1lf0dqkk/ia5amqd30lfrm9b2sj14tfe105ej4507/1561140000000/11307990157790987037/06545175548643614494/1H4UK-JvTtdyTDQnEErB8h-96io7robMc?h=09517765931921496336&e=download"></script>
+   <script async type="text/javascript" src="prebid2.20.0.js"></script>
    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 
    <script>
@@ -188,6 +188,32 @@
 		    
                 pbjs.initAdserverSet = true; // Informs PBJS that DFP Ad server was called
             }
+	   
+	    pbjs.bidderSettings = {
+                    standard: {
+                        adserverTargeting: [
+                            {
+                                key: "hb_bidder",
+                                val: function (bidResponse) {
+                                    console.log('Bid Response Bidder Name: ' + bidResponse.bidderCode);
+                                    return bidResponse.bidderCode;
+                                }
+                            }, {
+                                key: "hb_adid",
+                                val: function (bidResponse) {
+                                    console.log('Bid Response Ad ID: ' + bidResponse.adId);
+                                    return bidResponse.adId;
+                                }
+                            }, {
+                                key: "hb_pb",
+                                val: function (bidResponse) {
+                                    console.log('Bid Response Bid Price: ' + bidResponse.pbMg);
+                                    return '20.00';
+                                }
+                            }
+			]
+		    }
+	    };
 	   
 	    pbjs.que.push(function() {
 		    
