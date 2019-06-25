@@ -216,7 +216,7 @@
 	    };
 	   
 	    pbjs.que.push(function() {
-		    
+		pbjs.setConfig({ publisherDomain: "https://www.theverge.com" });
                 pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
 		
                 pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
