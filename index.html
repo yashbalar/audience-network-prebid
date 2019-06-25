@@ -340,6 +340,7 @@
       var slot3_refreshed = false;
       var slot4_refreshed = false;
       var listener = function() {
+	console.log("scrolled");
         if (window.scrollY >= div2H2 && !slot3_refreshed) {
           googletag.cmd.push(function() {
             googletag.pubads().refresh([slot3]);
