@@ -234,6 +234,24 @@
 			     },
 			      alwaysUseBid: true,
 			},
+		    sovrn: {
+			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
+			       return bidCpm + 1.00;
+			     },
+			      alwaysUseBid: true,
+			},
+		    pulsepoint: {
+			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
+			       return bidCpm + 1.50;
+			     },
+			      alwaysUseBid: true,
+			},
+		    adform: {
+			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
+			       return bidCpm + 0.50;
+			     },
+			      alwaysUseBid: true,
+			},
                     standard: {
                         adserverTargeting: [
                             {
@@ -261,16 +279,6 @@
 	   
 	    pbjs.que.push(function() {
                 pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
-		pbjs.setConfig({
-			  debugging: {
-			    enabled: true,
-			    bids: [{
-			      bidder: 'appnexus',
-			      adUnitCode: '/64720321/prebid-adunit-300-250',
-			      cpm: 20.00
-			    }]
-			  }
-		   });
                 pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
                     bidsBackHandler: initAdserver, // Callback method
                     timeout: PREBID_TIMEOUT // Timeout for bidders
