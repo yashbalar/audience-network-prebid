@@ -228,6 +228,12 @@
 	   
 	   
 	    pbjs.bidderSettings = {
+		    appnexus: {
+			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
+			       return bidCpm + 2.00;
+			     },
+			      alwaysUseBid: true,
+			},
                     standard: {
                         adserverTargeting: [
                             {
@@ -250,13 +256,7 @@
                                 }
                             }
 			]
-		    },
-		    appnexus: {
-			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
-			       return bidCpm + 2.00;
-			     },
-			      alwaysUseBid: true,
-			}
+		    }
 	    };
 	   
 	    pbjs.que.push(function() {
