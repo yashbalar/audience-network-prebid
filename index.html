@@ -254,7 +254,8 @@
 	    };
 	   
 	    pbjs.que.push(function() {
-		   pbjs.setConfig({
+                pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
+		pbjs.setConfig({
 			  debugging: {
 			    enabled: true,
 			    bids: [{
@@ -264,8 +265,6 @@
 			    }]
 			  }
 		   });
-                pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
-		
                 pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
                     bidsBackHandler: initAdserver, // Callback method
                     timeout: PREBID_TIMEOUT // Timeout for bidders
