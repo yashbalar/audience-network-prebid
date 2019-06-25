@@ -167,17 +167,7 @@
                         params: {
                             placementId: '616851695460361_624077668071097'
                         }
-                 }]
-	   },{
-		 code: 'div-gpt-ad-1560300915217-0', // adSlot's html <div> code    
-                 sizes: [[300, 250]],
-		 bids: [{
-			bidder: 'audienceNetwork',
-			params: {
-			      placementId: '616851695460361_624077744737756',
-			      format: 'native'
-			}
-		 }, {
+                 }, {
 			bidder: 'appnexus',
 			params: {
 			  placementId: '5626309'
@@ -202,6 +192,16 @@
 			 mid: 158989,
 			 test: 1
 		       }
+		 }]
+	   },{
+		 code: 'div-gpt-ad-1560300915217-0', // adSlot's html <div> code    
+                 sizes: [[300, 250]],
+		 bids: [{
+			bidder: 'audienceNetwork',
+			params: {
+			      placementId: '616851695460361_624077744737756',
+			      format: 'native'
+			}
 		 }]
            }];
 
@@ -252,7 +252,7 @@
                                 key: "hb_pb",
                                 val: function (bidResponse) {
                                     console.log('Bid Response Bid Price: ' + bidResponse.pbMg);
-                                    return '20.00';
+                                    return bidResponse.pbMg;
                                 }
                             }
 			]
