@@ -132,11 +132,22 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel" rel="stylesheet" type="text/css" />
 
-   <script async type="text/javascript" src="prebid2.20.0.js"></script>
+   <!--<script async type="text/javascript" src="prebid2.20.0.js"></script>-->
+   	
    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 
    <script>
+	loadScript('//acdn.adnxs.com/prebid/not-for-prod/prebid.js');
 
+	function loadScript(scriptSrc) {
+	  var script = document.createElement('script');
+	  script.async=true;
+	  script.type = 'text/javascript';
+	  script.src = scriptSrc;
+	  var node = document.getElementsByTagName('script')[0];
+	  node.parentNode.insertBefore(script, node);
+	 }
+	   
             var div_1_sizes = [
                 [300, 250]
             ];
