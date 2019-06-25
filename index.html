@@ -340,26 +340,23 @@
       var slot3_refreshed = false;
       var slot4_refreshed = false;
       var listener = function() {
-	console.log("scrolled: " + window.scrollY);
         if (window.scrollY >= div2H2 && !slot3_refreshed) {
           googletag.cmd.push(function() {
             googletag.pubads().refresh([slot3]);
           });
-          refreshed2 = true;
+          slot3_refreshed = true;
         } else if (window.scrollY >= div3H3 && !slot4_refreshed) {
           googletag.cmd.push(function() {
             googletag.pubads().refresh([slot4]);
           });
-          refreshed3 = true;
+          slot4_refreshed = true;
           window.removeEventListener('scroll', listener);
         };
       };
       window.addEventListener('scroll', listener);
       var div2 = document.querySelector(".adSlot3");
       var div2H = div2.offsetTop;
-      console.log("div2H: " + div2H);
       var div2H2 = div2H - 850;	          
-      console.log("div2H2: " + div2H2);
       var div3 = document.querySelector(".adSlot4");
       var div3H = div3.offsetTop;
       var div3H3 = div3H - 850;
