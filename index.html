@@ -225,6 +225,17 @@
                 pbjs.initAdserverSet = true; // Informs PBJS that DFP Ad server was called
             }
 	   
+	   pbjs.setConfig({
+		  debugging: {
+		    enabled: true,
+		    bids: [{
+		      bidder: 'appnexus',
+		      adUnitCode: '/64720321/prebid-adunit-300-250',
+		      cpm: 20.00
+		    }]
+		  }
+	   });
+	   
 	    pbjs.bidderSettings = {
                     standard: {
                         adserverTargeting: [
