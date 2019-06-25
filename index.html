@@ -225,16 +225,7 @@
                 pbjs.initAdserverSet = true; // Informs PBJS that DFP Ad server was called
             }
 	   
-	   pbjs.setConfig({
-		  debugging: {
-		    enabled: true,
-		    bids: [{
-		      bidder: 'appnexus',
-		      adUnitCode: '/64720321/prebid-adunit-300-250',
-		      cpm: 20.00
-		    }]
-		  }
-	   });
+	   
 	   
 	    pbjs.bidderSettings = {
                     standard: {
@@ -263,7 +254,16 @@
 	    };
 	   
 	    pbjs.que.push(function() {
-		pbjs.setConfig({ publisherDomain: "https://www.theverge.com" });
+		   pbjs.setConfig({
+			  debugging: {
+			    enabled: true,
+			    bids: [{
+			      bidder: 'appnexus',
+			      adUnitCode: '/64720321/prebid-adunit-300-250',
+			      cpm: 20.00
+			    }]
+			  }
+		   });
                 pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
 		
                 pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
