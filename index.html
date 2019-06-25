@@ -250,7 +250,13 @@
                                 }
                             }
 			]
-		    }
+		    },
+		    appnexus: {
+			      bidCpmAdjustment: function(bidCpm) { //adjust the CPM dynamically
+			       return bidCpm * .9;
+			     },
+			      alwaysUseBid: true,
+			}
 	    };
 	   
 	    pbjs.que.push(function() {
