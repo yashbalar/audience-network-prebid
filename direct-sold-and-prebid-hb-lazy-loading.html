@@ -210,7 +210,8 @@
                 googletag.cmd.push(function() {
                     pbjs.que.push(function() {
                         pbjs.setTargetingForGPTAsync(); // Sets targeting key-value pairs for DFP
-                        googletag.pubads().refresh([slot1, slot2]); // Calls DFP Ad Server
+                        //googletag.pubads().refresh([slot1, slot2]); // Calls DFP Ad Server
+			googletag.pubads().refresh();
                     });
                 });
 		    
