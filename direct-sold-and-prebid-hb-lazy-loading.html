@@ -1,139 +1,22 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://tahaj.github.io/favicon.ico">
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
-    <meta name="viewport" content="width=device-width"/>
+    <title>Make Something Awesome</title>
 
-    <title>Audience Network - Prebid Test</title>
-
-    <style type="text/css">
-
-        body{
-
-        }
-        /*     General overwrite     */
-        a{
-            color: #2C93FF;
-        }
-        a:hover, a:focus {
-            color: #1084FF;
-        }
-        a:focus, a:active,
-        button::-moz-focus-inner,
-        input[type="reset"]::-moz-focus-inner,
-        input[type="button"]::-moz-focus-inner,
-        input[type="submit"]::-moz-focus-inner,
-        select::-moz-focus-inner,
-        input[type="file"] > input[type="button"]::-moz-focus-inner {
-            outline : 0;
-        }
-
-        /*           Typography          */
-
-        p{
-            font-size: 16px;
-            line-height: 1.6180em;
-        }
-
-        .main{
-            background-position: center center;
-            background-size: cover;
-            height: 100vh;
-            min-height: 100%;
-            min-width: 100%;
-            position: auto;
-            top: 0;
-            width: auto;
-        }
-        .cover{
-            position: fixed;
-            opacity: 1;
-            background-color: rgba(0,0,0,.6);
-            left: 0px;
-            top: 0px;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        .cover.black{
-            background-color: rgba(0,0,0,.6);
-        }
-
-        .logo-container .logo{
-            overflow: hidden;
-            border-radius: 50%;
-            border: 1px solid #333333;
-            width: 60px;
-            float: left;
-        }
-
-        .main .logo{
-            color: #FFFFFF;
-            font-size: 56px;
-            font-weight: 300;
-            position: relative;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
-            margin-top: 80px;
-            z-index: 3;
-        }
-        .main .logo.cursive{
-            font-family: 'Grand Hotel',cursive;
-            font-size: 56px;
-        }
-        .main .content{
-            position: relative;
-            z-index: 4;
-        }
-        .main .motto{
-            min-height: 140px;
-        }
-        .main .motto, .main .subscribe .info-text{
-            font-size: 28px;
-            color: #FFFFFF;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.33);
-            text-align: center;
-            margin-top: 50px;
-
-        }
-        .main .subscribe .info-text{
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .footer{
-            position: relative;
-            bottom: 20px;
-            right: 0px;
-            width: 100%;
-            color: #AAAAAA;
-            z-index: 4;
-            text-align: right;
-            margin-top: 50px;
-        }
-        .footer a{
-            color: #FFFFFF;
-        }
-
-        @media (min-width:991px){
-            .footer{
-                position: fixed;
-                bottom: 20px;
-            }
-        }
-
-    </style>
-
-   <!--<script async type="text/javascript" src="prebid2.20.0.js"></script>-->
-
+    <link href="https://tahaj.github.io/bootstrap.min.css" rel="stylesheet">
+    <link href="https://tahaj.github.io/index.css" rel="stylesheet">
+	  
    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
 
    <script>
 	loadScript('//acdn.adnxs.com/prebid/not-for-prod/prebid.js');
-
 	function loadScript(scriptSrc) {
 	  var script = document.createElement('script');
 	  script.async=true;
@@ -152,7 +35,6 @@
             
             var PREBID_TIMEOUT = 600; // Recommended timeout for networks to respond with bid
             var FAILSAFE_TIMEOUT = 2000;
-
 	   // Defines a list of all adunits
            var adUnits = [{
                  code: 'div-gpt-ad-1559248285557-0', // adSlot's html <div> code
@@ -191,10 +73,8 @@
 			}
 		 }]
            }];
-
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
-
             var pbjs = pbjs || {};
             pbjs.que = pbjs.que || [];
 	   
@@ -274,7 +154,6 @@
 	   
             // in case PBJS doesn't load
             setTimeout(initAdserver, FAILSAFE_TIMEOUT);
-
 	    var slot1, slot2, slot3, slot4; 
 	    // This code defines an adSlot by connecting DFP adunit code with size and html <div>     
             googletag.cmd.push(function() {
@@ -306,18 +185,20 @@
 		googletag.pubads().collapseEmptyDivs(true);
                 googletag.enableServices();
              });
-
         </script>
+	  
+  </head>
 
-</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+	<a style="color:white"><class="navbar-brand"> <img src="https://tahaj.github.io/fbicon.png" width="20" height="20" class="d-inline-block align-top" alt=""> Audience Network | </a>
+      </nav>
+    </header>
 
-<body>
-<div class"cover" style="background-image: url('https://storage.googleapis.com/default-site/2017/background.jpg')">
-    
-    <div>
-        <h2 class="logo cursive">
-            Make Something Awesome
-        </h2>
+    <main role="main" class="container">
+      
+      <div>
         <h4 style="color:#D63A18">Direct Sold - 300x250</h4>
         <!-- /64720321/direct-sold-test-300-250 -->
 	<!-- This script is part of GPT tag that loads the image creative into the AdSlot -->
@@ -378,9 +259,20 @@
         </div>
 	 
     </div>
-	
-</body>
-    <!-- Enables Lazy loading -->	
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Make Something Awesome!</span>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://tahaj.github.io/popper.min.js"></script>
+    <script src="https://tahaj.github.io/bootstrap.min.js"></script>
+  </body>
+  <!-- Enables Lazy loading -->	
     <script>
       var slot3_refreshed = false;
       var slot4_refreshed = false;
@@ -407,4 +299,3 @@
       var div3H3 = div3H - 850;
     </script>
 </html>
-		
