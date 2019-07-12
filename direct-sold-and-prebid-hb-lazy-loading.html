@@ -92,7 +92,7 @@
                 pbjs.initAdserverSet = true; // Informs PBJS that DFP Ad server was called
             }
 	   
-	    pbjs.setConfig({ enableSendAllBids: false })
+
 	   
 	    pbjs.bidderSettings = {
 		    appnexus: {
@@ -146,6 +146,9 @@
 	   
 	    pbjs.que.push(function() {
                 pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
+		    
+		pbjs.setConfig({ enableSendAllBids: false })
+		    
                 pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
                     bidsBackHandler: initAdserver, // Callback method
                     timeout: PREBID_TIMEOUT // Timeout for bidders
