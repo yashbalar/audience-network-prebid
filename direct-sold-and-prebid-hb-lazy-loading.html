@@ -155,7 +155,7 @@
 	    pbjs.que.push(function() {
                 pbjs.addAdUnits(adUnits); // Adds all the defined adunits to PBJS
 		    
-		pbjs.setConfig({ enableSendAllBids: false })
+		pbjs.setConfig({ enableSendAllBids: true })
 		    
                 pbjs.requestBids({ // Requests bids by defining callback handler after auction and timeout for bidders
                     bidsBackHandler: initAdserver, // Callback method
