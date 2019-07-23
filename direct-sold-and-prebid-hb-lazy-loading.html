@@ -38,7 +38,16 @@
 	   // Defines a list of all adunits
            var adUnits = [{
                  code: 'div-gpt-ad-1559248285557-0', // adSlot's html <div> code
-                 sizes: [[320, 50], [300, 250], [300, 600]],
+		 mediaTypes: {
+			    banner: {
+				sizes: [
+				    [320, 50],
+				    [300, 250], 
+				    [300, 600]
+				]
+			    }
+		 },
+//                 sizes: [[320, 50], [300, 250], [300, 600]],
                  bids: [{
                         bidder: 'audienceNetwork',
                         params: {
