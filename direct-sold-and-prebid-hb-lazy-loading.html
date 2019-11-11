@@ -81,6 +81,16 @@
 			      format: 'native'
 			}
 		 }]
+           },{
+		 code: 'div-gpt-ad-1560300915217-1', // adSlot's html <div> code    
+                 sizes: [[300, 250]],
+		 bids: [{
+			bidder: 'audienceNetwork',
+			params: {
+			      placementId: '616851695460361_624077744737756',
+			      format: 'native'
+			}
+		 }]
            }];
             var googletag = googletag || {};
             googletag.cmd = googletag.cmd || [];
@@ -243,6 +253,29 @@
 	     <script>
 		    googletag.cmd.push(function() { 
 				googletag.display('div-gpt-ad-1560300915217-0'); 
+		    });
+	     </script>
+	     <!-- This html code is used to display native ad after GPT tag loads the 3rd party creative script and prebid renders audience network tag --> 
+	     <div class="fbANRoot fbDisplayType fbAdLoaded fbVisibleOnce">
+		  <a class="fbAdLink">
+		    <div class="fbAdMedia thirdPartyMediaClass"></div>
+		    <div class="fbAdSubtitle thirdPartySubtitleClass"></div>
+		    <div class="fbAdBody thirdPartyAdBody" data-auto-fit-text="true"></div>
+		    <div class="fbDefaultNativeAdWrapper">
+			      <div class="fbAdCallToAction thirdPartyCallToActionClass"></div>
+			      <div class="fbAdTitle thirdPartyTitleClass"></div>
+		    </div>
+		  </a>
+	      </div>  
+        </div>
+	      
+	<h4 style="color:#D63A18;margin-top: 20px;">Header Bidding - Native - 2</h4>
+	<!-- /64720321/prebid-adunit-native -->
+	<!-- This script is part of GPT tag that loads the creative into the AdSlot -->    
+	<div id='div-gpt-ad-1560300915217-1' class='adSlot3'>
+	     <script>
+		    googletag.cmd.push(function() { 
+				googletag.display('div-gpt-ad-1560300915217-1'); 
 		    });
 	     </script>
 	     <!-- This html code is used to display native ad after GPT tag loads the 3rd party creative script and prebid renders audience network tag --> 
