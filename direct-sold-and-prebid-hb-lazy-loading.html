@@ -104,7 +104,7 @@
                 googletag.cmd.push(function() {
                     pbjs.que.push(function() {
                         pbjs.setTargetingForGPTAsync(); // Sets targeting key-value pairs for DFP
-                        googletag.pubads().refresh([slot1, slot2]); // Calls DFP Ad Server
+                        googletag.pubads().refresh([slot1, slot2, slot5]); // Calls DFP Ad Server
                     });
                 });
 		    
@@ -176,7 +176,7 @@
 	   
             // in case PBJS doesn't load
             setTimeout(initAdserver, FAILSAFE_TIMEOUT);
-	    var slot1, slot2, slot3, slot4; 
+	    var slot1, slot2, slot3, slot4, slot5; 
 	    // This code defines an adSlot by connecting DFP adunit code with size and html <div>     
             googletag.cmd.push(function() {
                 slot3 = googletag
@@ -201,6 +201,10 @@
 			.addService(googletag.pubads());
 		slot4 = googletag
 			.defineSlot('/64720321/prebid-adunit-native', [[1,1],['fluid']], 'div-gpt-ad-1560300915217-0')
+			.addService(googletag.pubads());
+		    
+		slot5 = googletag
+			.defineSlot('/64720321/prebid-adunit-native', [[1,1],['fluid']], 'div-gpt-ad-1560300915217-1')
 			.addService(googletag.pubads());
 		    
 		googletag.pubads().disableInitialLoad(); // this will block GPT from loading initially, giving PBJS time to run header bidding auction
